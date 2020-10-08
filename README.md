@@ -1,5 +1,4 @@
-# LearningJava
-
+# Learning Java
 #### Uploading any projects/code that shows my progression in learning Java
 
 # Courses Included

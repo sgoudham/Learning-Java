@@ -25,6 +25,7 @@ public class UsingScanner {
         double pricePerOunce = packPrice / packVolume;
 
         System.out.printf("Price per ounce: %8.2f", pricePerOunce);
+        in.close();
     }
 }
 

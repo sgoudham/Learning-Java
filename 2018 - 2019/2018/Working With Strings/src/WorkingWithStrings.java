@@ -57,12 +57,11 @@ public class WorkingWithStrings {
         System.out.println("The Last Letter Of The Name is " + last);
 
         // Generating userID from strings entered
-        Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your first name: ");
-        String firstName = sc.next();
+        String firstName = in.next();
         System.out.println("Please enter your last name: ");
-        String secondName = sc.next();
-        sc.close();
+        String secondName = in.next();
+        in.close();
 
         LocalDateTime nowIsTheTime = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");

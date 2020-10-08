@@ -14,6 +14,7 @@ public class SimpleArrays {
             values[currentSize] = in.nextInt();
             currentSize++;
         }
+        in.close();
 
         //Find The Largest Value
         double largest = values[0];

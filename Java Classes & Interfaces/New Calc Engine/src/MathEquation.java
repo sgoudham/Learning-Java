@@ -4,6 +4,25 @@ public class MathEquation {
     private char opCode;
     private double result;
 
+    private static int numOfCalculations;
+    private static double sumOfResults;
+
+    // Empty constructor to allow us to use MathEquation without needing to pass in anything
+    public MathEquation() {}
+
+    // This only exists as a demo for chaining constructors
+    public MathEquation(char opCode) {
+        this.opCode = opCode;
+    }
+
+    // Demonstrating how chaining constructors works
+    public MathEquation(char opCode, double leftVal, double rightVal) {
+        this(opCode);
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+    }
+
+    // Method to execute the calculations
     void execute() {
         switch (this.opCode) {
             case 'a':
@@ -23,6 +42,12 @@ public class MathEquation {
                 this.result = 0.0d;
                 break;
         }
+        numOfCalculations++;
+        sumOfResults += result;
+    }
+
+    public static double getAverageResult() {
+        return sumOfResults / numOfCalculations;
     }
 
     public MathEquation(double leftVal, double rightVal, char opCode, double result) {

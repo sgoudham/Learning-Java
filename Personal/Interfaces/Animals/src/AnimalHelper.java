@@ -1,7 +1,7 @@
 package src;
 
 public class AnimalHelper {
-    
+
     private final Animal[] animals;
     private double averagePrice;
 
@@ -14,7 +14,7 @@ public class AnimalHelper {
 
         int total = 0;
         double sum = 0.0;
-        
+
         for (Animal animal : animals) {
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -33,6 +33,6 @@ public class AnimalHelper {
     public void displayAveragePrice() {
         /* Display the average price of all the animals */
 
-        System.out.printf("\nThe Average Price For All The Animals Are: £%.2f", averagePrice);
+        System.out.printf("%nThe Average Price For All The Animals Are: £%.2f", averagePrice);
     }
 }

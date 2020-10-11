@@ -23,7 +23,7 @@ public class MathEquation {
     }
 
     // Method to execute the calculations
-    void execute() {
+    public void execute() {
         switch (this.opCode) {
             case 'a':
                 this.result = this.leftVal + this.rightVal;
@@ -44,6 +44,22 @@ public class MathEquation {
         }
         numOfCalculations++;
         sumOfResults += result;
+    }
+
+    public void execute(double leftVal, double rightVal) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+
+        execute();
+    }
+
+    public void execute(int leftVal, int rightVal) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+        
+        execute();
+        
+        result = (int) result;
     }
 
     public static double getAverageResult() {

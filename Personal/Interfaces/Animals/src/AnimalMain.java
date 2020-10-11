@@ -8,13 +8,8 @@ public class AnimalMain {
     private static void displayAnimals() {
 
         // Creating an array of animal objects
-        AnimalHelper helper = new AnimalHelper(new Animal[] {
-            new Cow(),
-            new Cat(),
-            new Dog(),
-            new Horse()
-        });
-        
+        AnimalHelper helper = new AnimalHelper(new Animal[] { new Cow(), new Cat(), new Dog(), new Horse() });
+
         // Displaying information about the animals
         helper.displayInformation();
         helper.displayAveragePrice();

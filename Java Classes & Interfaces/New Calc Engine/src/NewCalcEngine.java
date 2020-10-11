@@ -18,6 +18,7 @@ public class NewCalcEngine {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter In Your Operation Please: \n");
         String userInput = in.nextLine();
+        in.close();
 
         dynamicHelper.process(userInput);
 
@@ -27,6 +28,8 @@ public class NewCalcEngine {
         Scanner in = new Scanner(System.in);
         System.out.println("Please Enter In A Calculation: \n");
         String userInput = in.nextLine();
+        in.close();
+        
         String parts[] = userInput.split(" ");
         performOperation(parts);
 

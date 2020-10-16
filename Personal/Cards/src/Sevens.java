@@ -44,7 +44,7 @@ public class Sevens extends Deck {
 
         String[] splitCard = userCard.split(" ");
         if (splitCard.length != 2)
-            askPlayer(playerCounter, player, tableHand, in);
+            return new String[0];
         return splitCard;
 
     }
@@ -63,39 +63,38 @@ public class Sevens extends Deck {
         }
 
         Hand userSuitHand = tableHand.getSevensTableHand().get(userSuitInTableHand);
-
         canBePlayed(cardToBePlayed, userSuitHand, userSuitInTableHand, tableHand, player);
-
-        playACard(userSuitHand, cardToBePlayed, tableHand, userSuitInTableHand, player);
     }
 
     public void canBePlayed(Card cardToBePlayed, Hand userSuitHand, Suits userSuitInTableHand, TableHand tableHand,
             Player player) {
 
-        int minimumValueInUserSuitHand = userSuitHand.getListOfCards().get(0).getFace();
-        int sizeOfUserSuitHand = userSuitHand.getListOfCards().size();
-        int maximumValueInUserSuitHand = userSuitHand.getListOfCards().get(sizeOfUserSuitHand - 1).getFace();
-
         if (userSuitHand.getListOfCards().size() == 0) {
             if (cardToBePlayed.getFace() == 7) {
-                playACard(userSuitHand, cardToBePlayed, tableHand, userSuitInTableHand, player);
+                playACard(userSuitHand, cardToBePlayed, 0, tableHand, userSuitInTableHand, player);
             } else {
                 System.out.println("Card Played Was Not A Face of 7 in Empty Suit! Try again!");
                 return;
             }
         } else {
-            if (cardToBePlayed.getFace() == (minimumValueInUserSuitHand - 1)) {
+            int minimumValueInUserSuitHand = userSuitHand.getListOfCards().get(0).getFace();
+            int sizeOfUserSuitHand = userSuitHand.getListOfCards().size();
+            int maximumValueInUserSuitHand = userSuitHand.getListOfCards().get(sizeOfUserSuitHand - 1).getFace();
 
+            if (cardToBePlayed.getFace() == (minimumValueInUserSuitHand - 1)) {
+                playACard(userSuitHand, cardToBePlayed, 0, tableHand, userSuitInTableHand, player);
+            } else if (cardToBePlayed.getFace() == (maximumValueInUserSuitHand + 1)) {
+                playACard(userSuitHand, cardToBePlayed, sizeOfUserSuitHand, tableHand, userSuitInTableHand, player);
             }
         }
 
     }
 
-    public void playACard(Hand userSuitHand, Card playingCard, TableHand tableHand, Suits userSuitInTableHand,
-            Player player) {
+    public void playACard(Hand userSuitHand, Card playingCard, int indexToInsertCard, TableHand tableHand,
+            Suits userSuitInTableHand, Player player) {
 
-        userSuitHand.addCard(playingCard);
-        tableHand.getSevensTableHand().put(userSuitInTableHand, userSuitHand);
+        userSuitHand.addCard(indexToInsertCard, playingCard);
+
         player.getHand().removeCard(playingCard);
     }
 }

@@ -6,7 +6,7 @@ public class CardMain {
         Sevens sevens = new Sevens();
         sevens.shuffle();
         List<Player> allPlayers = sevens.dealCards(4);
-        sevens.play(allPlayers, 3);
+        sevens.play(allPlayers, 4);
 
     }
 }

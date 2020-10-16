@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CardMain<Learning-Java_74709768>",
+            "request": "launch",
+            "mainClass": "CardMain",
+            "projectName": "Learning-Java_74709768"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AnimalMain<Learning-Java_74709768>",
+            "request": "launch",
+            "mainClass": "src.AnimalMain",
+            "projectName": "Learning-Java_74709768"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CounterMain<Learning-Java_74709768>",
+            "request": "launch",
+            "mainClass": "src.CounterMain",
+            "projectName": "Learning-Java_74709768"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NewCalcEngine<Learning-Java_74709768>",
+            "request": "launch",
+            "mainClass": "src.NewCalcEngine",
+            "projectName": "Learning-Java_74709768"
+        }
+    ]
+}

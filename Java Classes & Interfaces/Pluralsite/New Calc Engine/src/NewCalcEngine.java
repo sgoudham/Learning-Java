@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class NewCalcEngine {
 
     public static void main(String[] args) {
-        // performCalculations();
-        // executeCalculations();
-        // executeInteractively();
+        performCalculations();
+        executeCalculations();
+        executeInteractively();
         dynamicInteractivity();
     }
 
@@ -76,14 +76,6 @@ public class NewCalcEngine {
             calculation.calculate();
             System.out.println("Result: " + calculation.getResult());
         }
-    }
-
-    private static void doCalculation(CalculateBase calculate, double leftVal, double rightVal) {
-
-        calculate.setLeftVal(leftVal);
-        calculate.setRightVal(rightVal);
-        calculate.calculate();
-        System.out.println("The result of the calculation is: " + calculate.getResult());
     }
 
     private static void performCalculations() {

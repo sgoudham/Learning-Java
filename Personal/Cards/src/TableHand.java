@@ -11,8 +11,8 @@ public class TableHand extends Hand {
         }
     }
 
-    public void display() {
-        System.out.println("Current Deck: ");
+    public void display(String text) {
+        System.out.println("\n" + text);
         for (Entry<Suits, Hand> hand : sevensTableHand.entrySet()) {
             System.out.println(hand.getKey() + ": " + hand.getValue().toString());
         }

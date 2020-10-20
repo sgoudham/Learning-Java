@@ -7,15 +7,16 @@ public class CardMain {
         Sevens sevens = new Sevens();
         sevens.shuffle();
 
-        int numOfPlayers = getNumOfPlayers();
-        List<Player> allPlayers = sevens.dealCards(numOfPlayers);
+        Scanner in = new Scanner(System.in);
+        int numOfPlayers = getNumOfPlayers(in);
+        in.close();
 
+        List<Player> allPlayers = sevens.dealCards(numOfPlayers);
         sevens.play(allPlayers, numOfPlayers);
 
     }
 
-    public static int getNumOfPlayers() {
-        Scanner in = new Scanner(System.in);
+    public static int getNumOfPlayers(Scanner in) {
         System.out.println("Please Enter The Number of Players!");
         while (!in.hasNextInt()) {
             in.nextLine();

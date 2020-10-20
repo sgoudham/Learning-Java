@@ -5,7 +5,6 @@ import java.util.List;
 public abstract class Deck {
     private List<Card> deck = new ArrayList<Card>();
 
-    // Generate deck at the beginning of the game
     public Deck() {
         for (Suits suit : Suits.values()) {
             for (Faces face : Faces.values())
@@ -13,7 +12,6 @@ public abstract class Deck {
         }
     }
 
-    // Deal cards to players
     public List<Player> dealCards(int numOfPlayers) {
         int noOfCards = (deck.size() / numOfPlayers) + 1;
         List<Player> allPlayers = new ArrayList<Player>();
@@ -30,12 +28,10 @@ public abstract class Deck {
         return allPlayers;
     }
 
-    // Deal a card to the hand
     public void dealACard(Card card) {
         deck.remove(card);
     }
 
-    // Shuffle the entire deck
     public void shuffle() {
         Collections.shuffle(deck);
     }

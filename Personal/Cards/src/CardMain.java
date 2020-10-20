@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class CardMain {
     public static void main(String[] args) {
         /* Play Sevens */
+
         Sevens sevens = new Sevens();
         sevens.shuffle();
 

@@ -52,7 +52,6 @@ public class Sevens extends Deck {
 
     public void validatePlayerInput(String[] splitCard, Player player, TableHand tableHand, Scanner in) {
 
-        // Check if the first element is of type integer
         try {
             Integer.parseInt(splitCard[0]);
         } catch (NumberFormatException e) {

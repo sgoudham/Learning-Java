@@ -10,7 +10,6 @@ public class CardMain {
 
         Scanner in = new Scanner(System.in);
         int numOfPlayers = getNumOfPlayers(in);
-        in.close();
 
         List<Player> allPlayers = sevens.dealCards(numOfPlayers);
         sevens.play(allPlayers, numOfPlayers);

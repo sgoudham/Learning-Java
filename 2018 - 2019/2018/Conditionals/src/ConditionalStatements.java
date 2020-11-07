@@ -8,7 +8,7 @@ public class ConditionalStatements {
         System.out.print("Please enter your score: ");
         int score = in.nextInt();
         in.close();
-        
+
         String output = "Your Grade is: ";
         // Checks if Grade is A
         if (score >= 70) {

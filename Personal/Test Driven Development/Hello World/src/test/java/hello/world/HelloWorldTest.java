@@ -1,7 +1,9 @@
-package hello.world;
+package test.java.hello.world;
+
+import main.java.hello.world.Greeting;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 
 /**
  * Unit test for simple App.

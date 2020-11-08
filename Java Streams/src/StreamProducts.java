@@ -25,6 +25,12 @@ public class StreamProducts {
                 .map(StreamProduct::getName)
                 .forEach(System.out::println);
 
+        // Printing out names without using .map()
+        streamProducts.stream()
+                .filter(streamProduct -> streamProduct.getWeight() < 30)
+                .sorted(comparingInt(StreamProduct::getWeight))
+                .forEach(streamProduct -> System.out.println(streamProduct.getName()));
+
     }
 
     private static void namesOfLightProductsWeightSortedLoop(

@@ -11,16 +11,19 @@ public class StreamProducts {
 
         List<StreamProduct> streamProducts = new ArrayList<>();
         streamProducts.add(door);
-        streamProducts.add(floorPanel);
         streamProducts.add(window);
         streamProducts.add(floorPanel);
-        streamProducts.add(window);
 
         namesOfLightProductsWeightSortedLoop(streamProducts);
         namesOfLightProductsWeightSortedLoopStreamed(streamProducts);
     }
 
     private static void namesOfLightProductsWeightSortedLoopStreamed(List<StreamProduct> streamProducts) {
+        streamProducts.stream()
+                .filter(streamProduct -> streamProduct.getWeight() < 30)
+                .sorted(comparingInt(StreamProduct::getWeight))
+                .map(StreamProduct::getName)
+                .forEach(System.out::println);
 
     }
 

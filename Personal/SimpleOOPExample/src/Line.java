@@ -1,4 +1,4 @@
-public class Line {
+public class Line implements Equation {
     private double gradient;
     private double intercept;
 
@@ -22,6 +22,7 @@ public class Line {
         intercept = y1 - (gradient * x1);
     }
 
+    @Override
     public void displayEquation() {
         System.out.println("y = " + gradient + "x + " + intercept);
     }

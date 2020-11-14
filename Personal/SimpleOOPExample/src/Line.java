@@ -7,7 +7,7 @@ public class Line {
     private int y1;
     private int y2;
 
-    public Line(Coords coords1, Coords coords2) {
+    public Line(Coordinates coords1, Coordinates coords2) {
         this.x1 = coords1.getX();
         this.y1 = coords1.getY();
         this.x2 = coords2.getX();

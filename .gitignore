@@ -2,15 +2,17 @@
 2018 - 2019/.DS_Store
 Java Fundamentals/.DS_Store
 Java Classes & Interfaces/.DS_Store
-Learning Java.code-workspace
-Personal/Test Driven Development/Hello World/.classpath
 .vscode/settings.json
-Personal/Test Driven Development/Hello World/.project
-Personal/Test Driven Development/Hello World/pom.xml
-Personal/Test Driven Development/Hello World/.settings/org.eclipse.core.resources.prefs
-Personal/Test Driven Development/Hello World/.settings/org.eclipse.jdt.apt.core.prefs
-Personal/Test Driven Development/Hello World/.settings/org.eclipse.jdt.core.prefs
-Personal/Test Driven Development/Hello World/.settings/org.eclipse.m2e.core.prefs
 /.idea/
 /out/
 /Java Streams/Java Streams.iml
+/2018 - 2019/2018 - 2019.iml
+/Design Patterns/Design Patterns.iml
+/Java Classes & Interfaces/Java Classes & Interfaces.iml
+/Java Collections/Java Collections.iml
+/Learning-Java.iml
+/Personal/Personal.iml
+/Personal/src/tdd/helloworld/HelloWorld.iml
+/Java Fundamentals/Java Fundamentals.iml
+/Java Sets/Java Sets.iml
+/Personal/src/tdd/helloworld/pom.xml

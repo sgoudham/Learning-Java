@@ -1,3 +1,5 @@
+package type.conversion;
+
 public class TypeConversion {
     public static void main(String[] args) {
         float floatVal = 1.0f;

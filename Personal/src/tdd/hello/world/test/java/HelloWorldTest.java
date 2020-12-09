@@ -1,18 +1,13 @@
-package tdd.hello.world.src.test.java.hello.world;
+package tdd.hello.world.test.java;
 
 import org.junit.Test;
-import tdd.hello.world.src.main.java.hello.world.Greeting;
+import tdd.hello.world.src.java.Greeting;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-/**
- * Unit test for simple App.
- */
 public class HelloWorldTest {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
     public void greetingMessageShouldPass() {
         Greeting greeting = new Greeting("Hello World");

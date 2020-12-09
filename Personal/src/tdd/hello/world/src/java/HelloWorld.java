@@ -1,4 +1,4 @@
-package tdd.hello.world.src.main.java.hello.world;
+package tdd.hello.world.src.java;
 
 /**
  * Hello world!

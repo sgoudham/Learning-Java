@@ -12,5 +12,4 @@ public class BirdAdapter implements ToyDuck {
     public void squeak() {
         bird.makeSound();
     }
-
 }

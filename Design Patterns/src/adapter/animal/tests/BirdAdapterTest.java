@@ -13,7 +13,7 @@ class BirdAdapterTest {
     @Test
     void verifyMakeSoundIsCalled() {
         Bird mockedSparrow = mock(Sparrow.class);
-        ToyDuck birdAdapter = new BirdAdapter(mockedSparrow);
+        ToyDuck birdAdapter = BirdAdapter.getInstance(mockedSparrow);
 
         birdAdapter.squeak();
         verify(mockedSparrow, times(1)).makeSound();

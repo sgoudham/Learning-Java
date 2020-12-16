@@ -14,7 +14,7 @@ public class Main {
         plasticToyDuck.squeak();
 
         System.out.println("\nBirdAdapter...");
-        ToyDuck birdAdapter = new BirdAdapter(sparrow);
+        ToyDuck birdAdapter = BirdAdapter.getInstance(sparrow);
         birdAdapter.squeak();
 
     }

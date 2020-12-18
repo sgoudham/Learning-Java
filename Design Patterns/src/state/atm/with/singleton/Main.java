@@ -6,7 +6,7 @@ public class Main {
         ATMMachine atmMachine = new ATMMachine();
         atmMachine.setCashInMachine(200);
 
-        sleep(1000);
+        sleep(500);
 
         atmMachine.insertCard();
         atmMachine.ejectCard();

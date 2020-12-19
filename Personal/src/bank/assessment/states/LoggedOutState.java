@@ -1,7 +1,6 @@
 package bank.assessment.states;
 
 import bank.assessment.BankAccount;
-import bank.assessment.BasicAccount;
 import bank.assessment.Console;
 import bank.assessment.Person;
 
@@ -41,12 +40,12 @@ public class LoggedOutState implements BankAccountStates {
 
     @Override
     public void logOut() {
-        System.out.println("You Have Already Logged Out! Please Log in!");
+        System.out.println("You Have Already Logged Out!");
     }
 
     @Override
     public void deposit() {
-
+        System.out.println("Sorry, Please Log In First Before Trying Deposit Cash!");
     }
 
     @Override
@@ -57,16 +56,12 @@ public class LoggedOutState implements BankAccountStates {
 
     @Override
     public void viewDetails() {
-
+        System.out.println("There Are No Account Details To View, Please Log In!");
     }
 
     @Override
     public void deleteAccount() {
-        bankAccount = new BasicAccount();
+        bankAccount.changeBankAccountState(NotCreatedState.getInstance(bankAccount));
         System.out.println("Account Deleted! We're Sad To See You Go :(");
-
-        // Same as?
-        // bankAccount = new BasicAccount();
-        // System.out.println("Account Deleted! We're Sad To See You Go :(");
     }
 }

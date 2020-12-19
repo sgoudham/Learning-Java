@@ -19,7 +19,7 @@ public class LoggedInState implements BankAccountStates {
 
     @Override
     public void createAccount(Person person) {
-        System.out.println("This Account Is Already Registered With Us. Please Log In!");
+        System.out.println("This Account Is Already Registered With Us. You Are Already Logged In!");
     }
 
     @Override
@@ -29,7 +29,8 @@ public class LoggedInState implements BankAccountStates {
 
     @Override
     public void logOut() {
-        // Log out!
+        System.out.println("You Are Now Logged Out!");
+        bankAccount.changeBankAccountState(LoggedOutState.getInstance(bankAccount));
     }
 
     @Override

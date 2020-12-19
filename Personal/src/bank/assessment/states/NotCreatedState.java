@@ -50,9 +50,7 @@ public class NotCreatedState implements BankAccountStates {
     }
 
     @Override
-    public void logIn() {
-        System.out.println("Sorry, Our Systems Couldn't Find Your Details. Please Try Again or Register!");
-    }
+    public void logIn() { System.out.println("Sorry, Our Systems Couldn't Find Your Details. Please Try Again or Register!"); }
 
     @Override
     public void logOut() {
@@ -71,9 +69,7 @@ public class NotCreatedState implements BankAccountStates {
     }
 
     @Override
-    public void viewDetails() {
-        System.out.println("There Are No Account Details To View, Please Log In or Register!");
-    }
+    public void viewDetails() { System.out.println("There Are No Account Details To View, Please Log In or Register!"); }
 
     @Override
     public void deleteAccount() {

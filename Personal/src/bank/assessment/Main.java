@@ -8,7 +8,7 @@ public class Main {
         // user inputs because the focus of the project is the design. Not going to handle any users that are "dumb" :)
 
         Person person = new Person();
-        person.setBankAccount(new BasicAccount());
+        person.setBankAccount(new BankAccount());
         getPersonDetails(person);
 
         int choice;
@@ -36,7 +36,7 @@ public class Main {
                 case 4 -> person.getBankAccount().deposit();
                 case 5 -> person.getBankAccount().withdraw();
                 case 6 -> person.getBankAccount().logOut();
-                case 7 -> person.getBankAccount().deleteAccount();
+                case 7 -> person.getBankAccount().deleteAccount(person);
             }
         } while (choice != 8);
 

@@ -1,21 +1,21 @@
 package bank.assessment.states;
 
-import bank.assessment.*;
+import bank.assessment.BankAccount;
+import bank.assessment.Console;
+import bank.assessment.Person;
 
 import java.util.Random;
 
 public class NotCreatedState implements BankAccountStates {
 
-    BankAccount bankAccount;
-    private final Random random = new Random();
+    private static BankAccount bankAccount;
     private static NotCreatedState instance;
+    private final Random random = new Random();
 
-    private NotCreatedState(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
+    private NotCreatedState(BankAccount bankAccount) { NotCreatedState.bankAccount = bankAccount; }
 
-    public static NotCreatedState getInstance(BankAccount bankAccount) {
-        return instance == null ? instance = new NotCreatedState(bankAccount) : instance;
+    public static NotCreatedState getInstance(BankAccount ba) {
+        return instance == null || bankAccount != ba ? instance = new NotCreatedState(ba) : instance;
     }
 
     @Override
@@ -26,26 +26,24 @@ public class NotCreatedState implements BankAccountStates {
         System.out.println("Please Enter in a Suitable Password: ");
         String password = Console.INPUT.nextLine();
 
-        String accountNumber = String.valueOf(generateRandomNum(random, 100000, 999999));
-        String sortCode = generateRandomNum(random, 10, 99) + "-" + generateRandomNum(random, 10,99) + "-"  + generateRandomNum(random, 10,99);
-
         System.out.println("Would You Like A Premium Account? (Format Y/N)");
         String choice = Console.INPUT.nextLine();
 
+        String sortCode = generateRandomNum(random, 10, 99) + "-" + generateRandomNum(random, 10,99) + "-"  + generateRandomNum(random, 10,99);
+        String accountNumber = String.valueOf(generateRandomNum(random, 100000, 999999));
+
         if (choice.equalsIgnoreCase("y")) {
             System.out.println("What Would You Like Your Overdraft Limit To Be?");
-            String overdraftLimit = Console.INPUT.nextLine();
-
-            bankAccount = new PremiumAccount(username, password, accountNumber, sortCode, Double.parseDouble(overdraftLimit));
+            double overdraftLimit = Double.parseDouble(Console.INPUT.nextLine());
+            bankAccount = new BankAccount(username, password, sortCode, accountNumber, true, overdraftLimit);
 
         } else if (choice.equalsIgnoreCase("n")) {
-            bankAccount = new BasicAccount(username, password, accountNumber, sortCode);
+            bankAccount = new BankAccount(username, password, sortCode, accountNumber, false);
         }
 
         System.out.println("Bank Account Successfully Created!");
         System.out.println("Your Details Are: " + bankAccount);
 
-        bankAccount.changeBankAccountState(LoggedOutState.getInstance(bankAccount));
         person.setBankAccount(bankAccount);
     }
 
@@ -63,18 +61,13 @@ public class NotCreatedState implements BankAccountStates {
     }
 
     @Override
-    public boolean withdraw() {
-        System.out.println("Sorry, Please Log In First Before Trying Withdraw Funds!");
-        return false;
-    }
+    public void withdraw() { System.out.println("Sorry, Please Log In First Before Trying Withdraw Funds!"); }
 
     @Override
     public void viewDetails() { System.out.println("There Are No Account Details To View, Please Log In or Register!"); }
 
     @Override
-    public void deleteAccount() {
-        System.out.println("No Account Found To Delete, Please Log In!");
-    }
+    public void deleteAccount(Person person) { System.out.println("No Account Found To Delete"); }
 
     private int generateRandomNum(Random random, int lower, int upper) {
         return lower + random.nextInt(upper) + 1;

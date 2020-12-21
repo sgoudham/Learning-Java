@@ -8,8 +8,8 @@ public interface BankAccountStates {
     void logIn();
     void logOut();
     void deposit();
-    boolean withdraw();
+    void withdraw();
     void viewDetails();
-    void deleteAccount();
+    void deleteAccount(Person person);
 
 }

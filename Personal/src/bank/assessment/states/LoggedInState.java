@@ -6,21 +6,17 @@ import bank.assessment.Person;
 
 public class LoggedInState implements BankAccountStates {
 
-    BankAccount bankAccount;
+    private static BankAccount bankAccount;
     private static LoggedInState instance;
 
-    private LoggedInState(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
+    public LoggedInState(BankAccount bankAccount) { LoggedInState.bankAccount = bankAccount; }
 
-    public static LoggedInState getInstance(BankAccount bankAccount) {
-        return instance == null ? instance = new LoggedInState(bankAccount) : instance;
+    public static LoggedInState getInstance(BankAccount ba) {
+        return instance == null || bankAccount != ba ? instance = new LoggedInState(ba) : instance;
     }
 
     @Override
-    public void createAccount(Person person) {
-        System.out.println("This Account Is Already Registered With Us. You Are Already Logged In!");
-    }
+    public void createAccount(Person person) { System.out.println("This Account Is Already Registered With Us. You Are Already Logged In!"); }
 
     @Override
     public void logIn() {
@@ -40,25 +36,33 @@ public class LoggedInState implements BankAccountStates {
 
         if (cashToDeposit >= 0) {
             bankAccount.setBalance(bankAccount.getBalance() + cashToDeposit);
+            System.out.printf("Deposit Of %s Successful!\n", cashToDeposit);
+            bankAccount.displayBalance();
         } else {
             System.out.println("Amount Entered Not Valid! Try Again!");
         }
     }
 
     @Override
-    public boolean withdraw() {
-        return bankAccount.withdraw();
+    public void withdraw() {
+        System.out.println("How Much Money Do You Want To Withdraw?");
+        double cashToWithdraw = Double.parseDouble(Console.INPUT.nextLine());
+
+        if (cashToWithdraw <= (bankAccount.getBalance() + bankAccount.getOverdraftLimit())) {
+            bankAccount.setBalance(bankAccount.getBalance() - cashToWithdraw);
+            System.out.printf("Withdrawal Of %s Successful!\n", cashToWithdraw);
+            bankAccount.displayBalance();
+        } else {
+            System.out.println("Insufficient Funds Available to Withdraw! Try Again!");
+        }
     }
 
     @Override
-    public void viewDetails() {
-        System.out.println("Your Current Bank Details:");
-        System.out.println(bankAccount);
-    }
+    public void viewDetails() { System.out.println("Your Current Bank Details: \n" + bankAccount); }
 
     @Override
-    public void deleteAccount() {
-        bankAccount.changeBankAccountState(NotCreatedState.getInstance(bankAccount));
+    public void deleteAccount(Person person) {
+        person.setBankAccount(new BankAccount());
         System.out.println("Account Deleted! We're Sad To See You Go :(");
     }
 }

@@ -6,15 +6,15 @@ import bank.assessment.Person;
 
 public class LoggedOutState implements BankAccountStates {
 
-    BankAccount bankAccount;
+    private static BankAccount bankAccount;
     private static LoggedOutState instance;
 
     private LoggedOutState(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
+        LoggedOutState.bankAccount = bankAccount;
     }
 
-    public static LoggedOutState getInstance(BankAccount bankAccount) {
-        return instance == null ? instance = new LoggedOutState(bankAccount) : instance;
+    public static LoggedOutState getInstance(BankAccount ba) {
+        return instance == null || bankAccount != ba ? instance = new LoggedOutState(ba) : instance;
     }
 
     @Override
@@ -33,7 +33,8 @@ public class LoggedOutState implements BankAccountStates {
         if (!bankAccount.getUsername().equalsIgnoreCase(loginUsername) || !bankAccount.getPassword().equalsIgnoreCase(loginPassword)) {
             System.out.println("Uh Oh Error! Incorrect Username Or Password Entered!");
         } else {
-            System.out.printf("Welcome Back '%s'", bankAccount.getUsername());
+            System.out.printf("Welcome Back '%s'\n", bankAccount.getUsername());
+            System.out.println("Your Current Bank Details: \n" + bankAccount);
             bankAccount.changeBankAccountState(LoggedInState.getInstance(bankAccount));
         }
     }
@@ -49,9 +50,8 @@ public class LoggedOutState implements BankAccountStates {
     }
 
     @Override
-    public boolean withdraw() {
+    public void withdraw() {
         System.out.println("Please Log In Before Trying To Withdraw Funds!");
-        return false;
     }
 
     @Override
@@ -60,8 +60,8 @@ public class LoggedOutState implements BankAccountStates {
     }
 
     @Override
-    public void deleteAccount() {
-        bankAccount.changeBankAccountState(NotCreatedState.getInstance(bankAccount));
+    public void deleteAccount(Person person) {
+        person.setBankAccount(new BankAccount());
         System.out.println("Account Deleted! We're Sad To See You Go :(");
     }
 }

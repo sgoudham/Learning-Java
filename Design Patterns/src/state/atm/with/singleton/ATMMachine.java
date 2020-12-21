@@ -38,10 +38,6 @@ public class ATMMachine {
         return atmState;
     }
 
-    public void setAtmState(ATMState atmState) {
-        this.atmState = atmState;
-    }
-
     public int getCashInMachine() {
         return cashInMachine;
     }

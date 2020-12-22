@@ -4,8 +4,8 @@
 ## Design Patterns Included
 - Singleton
 - Adapter
-- State 
-- Composite 
+- State
+- Composite
 - Iterator
 - Factory
 

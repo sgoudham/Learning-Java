@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class SongIterator implements Iterator<SongComponent> {
-    List<SongComponent> playList;
+    private final List<SongComponent> playList;
     private int currentIndex = 0;
 
     public SongIterator(List<SongComponent> playList) {

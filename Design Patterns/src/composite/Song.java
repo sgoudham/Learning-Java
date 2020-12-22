@@ -2,9 +2,9 @@ package composite;
 
 public class Song extends SongComponent {
 
-    String songName;
-    String bandName;
-    int releaseYear;
+    private final String songName;
+    private final String bandName;
+    private final int releaseYear;
 
     public Song(String songName, String bandName, int releaseYear){
         this.songName = songName;

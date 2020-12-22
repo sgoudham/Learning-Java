@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class Sevens extends Deck {
 
-    public Sevens() {
-        super();
-    }
+    public Sevens() { }
 
     public void play(List<Player> allPlayers, int numOfPlayers) {
         int playerCounter = 0;

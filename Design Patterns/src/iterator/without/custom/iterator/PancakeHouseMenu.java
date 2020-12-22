@@ -34,9 +34,12 @@ public class PancakeHouseMenu {
         menuItems.add(new MenuItem(name, description, vegetarian, price));
     }
 
+/*
+    Note: Using iterator to get rid of this code
     public List<MenuItem> getMenuItems() {
         return menuItems;
     }
+*/
 
     public Iterator<MenuItem> createIterator() {
         return new PancakeHouseMenuIterator(menuItems);

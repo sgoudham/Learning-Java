@@ -5,6 +5,8 @@
 - Singleton
 - Adapter
 - State 
+- Composite 
+- Iterator
 
 ## Pluralsite Courses Included
 

@@ -1,4 +1,4 @@
-package state.atm;
+package state;
 
 public interface ATMState {
 

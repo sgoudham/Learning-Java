@@ -1,12 +1,12 @@
-package state.atm.with.singleton;
+package state;
 
 public class Main {
     public static void main(String[] args) {
 
         ATMMachine atmMachine = new ATMMachine();
-        atmMachine.setCashInMachine(200);
+        atmMachine.cashInMachine = 200;
 
-        sleep(500);
+        sleep(1000);
 
         atmMachine.insertCard();
         atmMachine.ejectCard();

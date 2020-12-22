@@ -1,4 +1,4 @@
-package state.atm.with.singleton;
+package state.with.singleton;
 
 public interface ATMState {
 

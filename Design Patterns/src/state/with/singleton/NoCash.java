@@ -1,11 +1,16 @@
-package state.atm;
+package state.with.singleton;
 
 public class NoCash implements ATMState {
 
     ATMMachine atmMachine;
+    private static NoCash instance;
 
-    public NoCash(ATMMachine atmMachine) {
+    private NoCash(ATMMachine atmMachine) {
         this.atmMachine = atmMachine;
+    }
+
+    public static NoCash getInstance(ATMMachine atmMachine) {
+        return instance == null ? instance = new NoCash(atmMachine) : instance;
     }
 
     @Override

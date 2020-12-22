@@ -1,8 +1,8 @@
-package state.atm.with.singleton.tests;
+package state.with.singleton.tests;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import state.atm.with.singleton.*;
+import state.with.singleton.*;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertSame;

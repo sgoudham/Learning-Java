@@ -1,11 +1,16 @@
-package state.atm;
+package state.with.singleton;
 
 public class HasCard implements ATMState {
 
     ATMMachine atmMachine;
+    private static HasCard instance;
 
-    public HasCard(ATMMachine atmMachine) {
+    private HasCard(ATMMachine atmMachine) {
         this.atmMachine = atmMachine;
+    }
+
+    public static HasCard getInstance(ATMMachine atmMachine) {
+        return instance == null ? instance = new HasCard(atmMachine) : instance;
     }
 
     @Override
@@ -16,7 +21,7 @@ public class HasCard implements ATMState {
     @Override
     public void ejectCard() {
         System.out.println("Your card is ejected");
-        atmMachine.changeATMMachineState(new NoCard(atmMachine));
+        atmMachine.changeATMMachineState(NoCard.getInstance(atmMachine));
     }
 
     @Override
@@ -29,11 +34,11 @@ public class HasCard implements ATMState {
 
         if (pinEntered == 1234) {
             System.out.println("Correct PIN entered");
-            atmMachine.correctPinEntered = true;
-            atmMachine.changeATMMachineState(new HasPin(atmMachine));
+            atmMachine.setCorrectPinEntered(true);
+            atmMachine.changeATMMachineState(HasPin.getInstance(atmMachine));
         } else {
             System.out.println("You entered the wrong PIN");
-            atmMachine.correctPinEntered = false;
+            atmMachine.setCorrectPinEntered(false);
         }
     }
 }

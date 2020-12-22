@@ -7,6 +7,7 @@
 - State 
 - Composite 
 - Iterator
+- Factory
 
 ## Pluralsite Courses Included
 

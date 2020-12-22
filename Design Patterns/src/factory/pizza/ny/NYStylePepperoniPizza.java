@@ -1,15 +1,16 @@
-package factory.ny;
+package factory.pizza.ny;
 
-import factory.Pizza;
+import factory.pizza.Pizza;
 
-public class NYStyleVeggiePizza extends Pizza {
+public class NYStylePepperoniPizza extends Pizza {
 
-	public NYStyleVeggiePizza() {
-		setName("NY Style Veggie Pizza");
+	public NYStylePepperoniPizza() {
+		setName("NY Style Pepperoni Pizza");
 		setDough("Thin Crust Dough");
 		setSauce("Marinara Sauce");
 
 		getToppings().add("Grated Reggiano Cheese");
+		getToppings().add("Sliced Pepperoni");
 		getToppings().add("Garlic");
 		getToppings().add("Onion");
 		getToppings().add("Mushrooms");

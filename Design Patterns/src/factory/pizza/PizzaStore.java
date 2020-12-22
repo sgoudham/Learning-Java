@@ -1,4 +1,4 @@
-package factory;
+package factory.pizza;
 
 public abstract class PizzaStore {
  

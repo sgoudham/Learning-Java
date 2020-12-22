@@ -1,6 +1,6 @@
-package factory.ny;
+package factory.pizza.ny;
 
-import factory.Pizza;
+import factory.pizza.Pizza;
 
 public class NYStyleClamPizza extends Pizza {
 

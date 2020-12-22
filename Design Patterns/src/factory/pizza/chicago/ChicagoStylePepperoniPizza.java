@@ -1,18 +1,19 @@
-package factory.chicago;
+package factory.pizza.chicago;
 
-import factory.Pizza;
+import factory.pizza.Pizza;
 
-public class ChicagoStyleVeggiePizza extends Pizza {
+public class ChicagoStylePepperoniPizza extends Pizza {
 
-	public ChicagoStyleVeggiePizza() {
-		setName("Chicago Deep Dish Veggie Pizza");
+	public ChicagoStylePepperoniPizza() {
+		setName("Chicago Style Pepperoni Pizza");
 		setDough("Extra Thick Crust Dough");
 		setSauce("Plum Tomato Sauce");
-
+ 
 		getToppings().add("Shredded Mozzarella Cheese");
 		getToppings().add("Black Olives");
 		getToppings().add("Spinach");
 		getToppings().add("Eggplant");
+		getToppings().add("Sliced Pepperoni");
 	}
  
 	@Override

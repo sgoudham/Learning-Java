@@ -1,7 +1,7 @@
-package factory.chicago;
+package factory.pizza.chicago;
 
-import factory.Pizza;
-import factory.PizzaStore;
+import factory.pizza.Pizza;
+import factory.pizza.PizzaStore;
 
 public class ChicagoPizzaStore extends PizzaStore {
 

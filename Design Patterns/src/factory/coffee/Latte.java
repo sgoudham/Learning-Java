@@ -14,5 +14,5 @@ public class Latte extends Coffee{
     }
 
     @Override
-    public void steamMilk() { System.out.println("Steaming Almond Milk...."); }
+    public void steamMilk() { System.out.println("Steaming " + getMilk() + "...."); }
 }

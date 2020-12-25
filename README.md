@@ -8,6 +8,7 @@
 - Composite
 - Iterator
 - Factory
+- Facade
 
 ## Pluralsite Courses Included
 

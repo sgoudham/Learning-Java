@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Formatter;
 import java.util.StringJoiner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
     private static final String rootResources = "C:\\Users\\sgoud\\JavaProjects\\Learning-Java\\Pluralsite\\src\\intermediate\\Java Fundamentals - The Core Platform\\resources\\";
@@ -18,6 +20,8 @@ public class Main {
         formattingStrings();
 
         writeFormattedContentToFile();
+        System.out.println();
+        useRegex();
     }
 
     private static void stringJoiner() {
@@ -121,6 +125,26 @@ public class Main {
 
         try (Formatter formatter = new Formatter(writer)) {
             formatter.format("My nephews are %d, %d, %d and %d years old", david, dawson, dillon, gordon);
+        }
+    }
+
+    private static void useRegex() {
+        String test = "apple, apple and orange please";
+
+        System.out.println(test.replaceAll("ple", "ricot"));
+        System.out.println(test.replaceAll("ple\\b", "ricot"));
+
+        String[] parts = test.split("\\b");
+        for (String part : parts) {
+            if (part.matches("\\w+")) {
+                System.out.println(part);
+            }
+        }
+
+        Pattern pattern = Pattern.compile("\\w+");
+        Matcher matcher = pattern.matcher(test);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
         }
     }
 }

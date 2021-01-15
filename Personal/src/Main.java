@@ -140,7 +140,7 @@ public class Main {
         // Output: true
         System.out.println(helloWorld.contains("Hello"));
 
-        // TODO .equals()
+        // TODO .equals()K
         // Checks if 2 strings are equal
         // Return Type: boolean
         // Output: true

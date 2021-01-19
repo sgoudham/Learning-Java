@@ -13,12 +13,12 @@ public class SpeakerServiceImpl implements SpeakerService {
         this.speakerRepository = speakerRepository;
     }
 
+    public void setSpeakerRepository(SpeakerRepository speakerRepository) {
+        this.speakerRepository = speakerRepository;
+    }
+
     @Override
     public List<Speaker> findAll() {
         return speakerRepository.findAll();
-    }
-
-    public void setSpeakerRepository(SpeakerRepository speakerRepository) {
-        this.speakerRepository = speakerRepository;
     }
 }

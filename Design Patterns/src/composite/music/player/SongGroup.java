@@ -1,4 +1,4 @@
-package composite;
+package composite.music.player;
 
 import java.util.ArrayList;
 import java.util.List;

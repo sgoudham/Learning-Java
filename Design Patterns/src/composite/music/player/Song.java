@@ -1,4 +1,4 @@
-package composite;
+package composite.music.player;
 
 public class Song extends SongComponent {
 

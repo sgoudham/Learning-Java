@@ -1,4 +1,4 @@
-package composite;
+package composite.music.player;
 
 public abstract class SongComponent {
 
